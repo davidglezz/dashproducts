@@ -118,7 +118,7 @@ class dashproducts extends Module
             $tr = array();
             $tr[] = array(
                 'id' => 'firstname_lastname',
-                'value' => '<a href="'.$this->context->link->getAdminLink('AdminCustomers', true).'&id_customer='.$order['id_customer'].'&viewcustomer">'.Tools::htmlentitiesUTF8($order['firstname']).' '.Tools::htmlentitiesUTF8($order['lastname']).'</a>',
+                'value' => '<a href="'.$this->context->link->getAdminLink('AdminCustomers', true, ['id_customer' => $order['id_customer'], 'viewcustomer' => 1]).'">'.Tools::htmlentitiesUTF8($order['firstname']).' '.Tools::htmlentitiesUTF8($order['lastname']).'</a>',
                 'class' => 'text-left',
             );
             $tr[] = array(
@@ -242,7 +242,7 @@ class dashproducts extends Module
                 ),
                 array(
                     'id' => 'product',
-                    'value' => '<a href="'.$this->context->link->getAdminLink('AdminProducts', true).'&id_product='.$product_obj->id.'&updateproduct">'.Tools::htmlentitiesUTF8($product['product_name']).'</a>'.'<br/>'.Tools::displayPrice($productPrice),
+                    'value' => '<a href="'.$this->context->link->getAdminLink('AdminProducts', true, ['id_product' => $product_obj->id, 'updateproduct' => 1]).'">'.Tools::htmlentitiesUTF8($product['product_name']).'</a>'.'<br/>'.Tools::displayPrice($productPrice),
                     'class' => 'text-center'
                 ),
                 array(
